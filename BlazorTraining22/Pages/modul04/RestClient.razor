@@ -1,0 +1,25 @@
+﻿@page "/rest"
+@inject IHttpClientFactory http
+<h3>RestClient</h3>
+<button @onclick="load">rest call</button>
+Anzahl: @MyProperty
+@code {
+    public string MyProperty { get; set; }
+    // void  load()
+    //{
+    //    //var http = new HttpClient();
+    //    var client = http.CreateClient();
+    //    // https://services.odata.org/TripPinRESTierService/People/$count
+    //    MyProperty =  
+    //    client.GetStringAsync(@"https://services.odata.org/TripPinRESTierService/People/$count").Result;
+    //}
+    async  void  load()
+    {
+
+        var client = http.CreateClient();
+
+        MyProperty = await 
+        client.GetStringAsync(@"https://services.odata.org/TripPinRESTierService/People/$count");
+        StateHasChanged();
+    }
+}

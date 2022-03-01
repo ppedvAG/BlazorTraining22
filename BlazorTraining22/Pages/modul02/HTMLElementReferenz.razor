@@ -1,0 +1,13 @@
+﻿<h3>HTMLElementReferenz</h3>
+<input @ref="input1"/>
+<button class="btn btn-outline-danger" 
+
+@onclick="click">click</button>
+@code {
+    ElementReference input1;
+    void click()
+    {
+        input1.FocusAsync();
+       
+    }
+}

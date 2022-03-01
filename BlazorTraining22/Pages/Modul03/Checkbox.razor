@@ -1,0 +1,15 @@
+﻿@page "/cb"
+<h3 style='@(MyProperty?"text-decoration:line-through":"")'>Checkbox</h3>
+@if (MyProperty)
+{
+   <h2>bin ein checker!</h2>
+}
+else
+{
+    <p>Lorem ipusmmm</p>
+}
+
+<input type="checkbox" @bind="MyProperty"/>
+@code {
+    public bool MyProperty { get; set; }
+}

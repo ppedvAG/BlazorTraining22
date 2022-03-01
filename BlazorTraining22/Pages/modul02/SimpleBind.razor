@@ -1,0 +1,9 @@
+﻿@page "/sbind"
+<h3 style="background-color:@MyProperty">SimpleBind</h3>
+
+@MyProperty
+<input @bind="MyProperty"  />
+
+@code {
+    public string MyProperty { get; set; }
+}

@@ -1,0 +1,21 @@
+﻿@page "/pe"
+<h3>PageEvents</h3>
+<button @onclick="click">flow</button>
+@MyProperty
+@code {
+    public int MyProperty { get; set; }
+    void click()
+    {
+
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        MyProperty++;
+        //StateHasChanged();
+    }
+    protected override void OnInitialized()
+    {
+      
+    }
+}

@@ -1,0 +1,26 @@
+﻿@page "/modal"
+<h3>UseModal</h3>
+<Button @onclick="openclose" class="btn btn-primary">modal</Button>
+<Modalppedv @ref="mpp" 
+OnSave="speichern"
+Titel="mein modaler Dialog">
+    <p>bitte eingeben <br />
+        <input class="form-control" @bind="MyProperty" />
+        
+    </p>
+
+</Modalppedv>
+@code {
+    public string MyProperty { get; set; }
+    Modalppedv mpp;
+    void openclose()
+    {
+        mpp.Show();
+
+    }
+    void speichern()
+    {
+        
+    }
+}
+

@@ -1,0 +1,38 @@
+﻿@page "/ep"
+@page "/ep/{id:int}"
+<h3>EditPerson</h3>
+<EditForm Model="MyPerson" OnSubmit="speichern">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <InputText  class="form-control" @bind-Value="MyPerson.Name"></InputText>
+            <ValidationMessage For="@(()=>MyPerson.Name)"></ValidationMessage>
+        </div>
+    </div>
+       <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Gross</label>
+        <div class="col-sm-10">
+            <InputNumber  class="form-control" @bind-Value="MyPerson.Gross"></InputNumber>
+            <ValidationMessage For="@(()=>MyPerson.Gross)"></ValidationMessage>
+        </div>
+    </div>
+       <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Geb Dat</label>
+        <div class="col-sm-10">
+            <InputDate  class="form-control" @bind-Value="MyPerson.GebDat"></InputDate>
+            <ValidationMessage For="@(()=>MyPerson.GebDat)"></ValidationMessage>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit"></button>
+    <ValidationSummary></ValidationSummary>
+</EditForm>
+@code {
+    [Parameter]
+    public int id { get; set; }
+    public Person MyPerson { get; set; } = new Person();
+    void speichern()
+    {
+
+    }
+}

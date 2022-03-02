@@ -1,0 +1,23 @@
+﻿<div @attributes="xAttribute">
+    <h3>@Titel</h3> @Antwort @Status
+    <hr />
+    @ChildContent
+</div>
+@code {
+    [Parameter]
+    public string Titel { get; set; }
+
+    [Parameter]
+    public modul05.Person Person { get; set; }
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> xAttribute { get; set; }
+
+    [CascadingParameter]
+    public int Antwort { get; set; }
+     [CascadingParameter(Name ="Status")]
+    public string Status { get; set; }
+
+}

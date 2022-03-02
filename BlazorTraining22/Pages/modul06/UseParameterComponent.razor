@@ -1,0 +1,17 @@
+﻿@page "/upc"
+<h3>UseParameterComponent</h3>
+<CascadingValue Value="@((int)42)">
+    <CascadingValue Name="Status" Value="connected">
+        <ParameterComponent Titel="Hallo Welt" style="background-color:yellow" hannes="toll"
+                            Person="@(new modul05.Person())">
+            <p>
+                Hannes Preishuber<br />
+                aus <b>Braunau</b>
+            </p>
+
+        </ParameterComponent>
+    </CascadingValue>
+</CascadingValue>
+@code {
+    public string connected { get; set; } = "connected";
+}

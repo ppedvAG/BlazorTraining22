@@ -1,12 +1,19 @@
 ﻿@page "/ep"
 @page "/ep/{id:int}"
 <h3>EditPerson</h3>
-<EditForm Model="MyPerson" OnSubmit="speichern">
+<EditForm   EditContext="_editContext" OnSubmit="speichern">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="mb-3 row">
         <label  class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
             <InputText  class="form-control" @bind-Value="MyPerson.Name"></InputText>
+            <ValidationMessage For="@(()=>MyPerson.Name)"></ValidationMessage>
+        </div>
+    </div>
+     <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <InputTextppedv  class="form-control" @bind-Value="MyPerson.Name"></InputTextppedv>
             <ValidationMessage For="@(()=>MyPerson.Name)"></ValidationMessage>
         </div>
     </div>
@@ -34,5 +41,11 @@
     void speichern()
     {
 
+    }
+    EditContext _editContext;
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(MyPerson);
+       
     }
 }

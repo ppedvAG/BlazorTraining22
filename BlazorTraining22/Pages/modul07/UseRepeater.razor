@@ -1,0 +1,27 @@
+﻿@page "/ur"
+@inject Models.northwindContext db
+
+<h3>UseRepeater</h3>
+<table class="table-striped">
+<Repeaterppedv ItemType="Models.Customer" SelectMethod="load"
+Context="putin">
+    <EmptyDataTemplate>
+        wir haben keine Daten
+    </EmptyDataTemplate>
+    <ItemTemplate>
+   <tr>
+       <td>@putin.CompanyName</td>
+   </tr>
+       
+</ItemTemplate>
+
+</Repeaterppedv>
+</table>
+@code {
+
+    public List<Models.Customer> load()
+    {
+        return db.Customers.ToList();
+    }
+
+}

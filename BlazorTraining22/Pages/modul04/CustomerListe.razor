@@ -1,0 +1,11 @@
+﻿@page "/customer"
+@inject Models.northwindContext db
+<h3>CustomerListe</h3>
+@foreach (var item in db.Customers)
+{
+    <a href="/editcustomer/@item.CustomerId">
+    @item.CompanyName</a><br />
+}
+@code {
+
+}

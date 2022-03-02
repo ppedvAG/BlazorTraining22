@@ -1,0 +1,8 @@
+﻿@page "/editcustomer/{id?}"
+@inject Models.northwindContext db
+<h3>EditCustomer</h3>
+@id
+@code {
+    [Parameter]
+    public string id { get; set; }
+}
